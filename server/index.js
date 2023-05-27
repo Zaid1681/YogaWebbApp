@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("hello backend");
 });
 app.post("/api/mediapipe/yog1", async (req, res) => {
-  const pythonProcess = await spawn("python", ["main1.py"]);
+  const pythonProcess = spawn("python", ["main1.py"]);
 
   pythonProcess.stdout.on("data", (data) => {
     console.log(data.toString());
